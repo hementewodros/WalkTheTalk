@@ -3,6 +3,33 @@
 **WalkTheTalk** is a Flask-based web app that connects with your Google Fit account to fetch your step count using OAuth2 authentication. This app demonstrates how to securely integrate with Google APIs and visualize personal health data.
 
 ---
+## 📌 About the Project
+
+I created **WalkTheTalk** with a simple idea in mind:  
+> *Encourage people to use social media more mindfully—by tying every direct message (DM) they send to real-world movement.*
+
+### 🎯 Inspiration  
+In a world where it's easy to scroll endlessly or fire off dozens of DMs without thinking, I wanted to build something that gently nudges people to get moving first. The concept is simple but powerful: **1 step = 1 DM**. It’s a creative way to make physical activity a prerequisite for online engagement.
+
+### 🛠️ How It Was Built  
+- **Backend:** Python & Flask  
+- **OAuth Integration:** Google OAuth2 for secure login  
+- **Health Data:** Google Fit API to fetch real-time step counts  
+- **Frontend:** HTML and custom CSS for a clean, mobile-friendly UI
+
+### 📚 What I Learned  
+- How to implement OAuth2 in a Flask web app  
+- How to securely access and use the Google Fit API  
+- How to design a lightweight UI that feels intuitive and motivating  
+- The importance of HTTPS when using OAuth (and how to test around it during development)
+
+### ⚠️ Challenges Faced  
+- Setting up the OAuth2 flow securely in a local development environment  
+- Handling `InsecureTransportError` without compromising security  
+- Getting familiar with Google’s scope and permission system  
+- Parsing and calculating step data from Google Fit’s detailed datasets
+
+This project was a fun and practical way to mix tech with behavioral change. I hope it sparks ideas for others looking to connect physical health with digital habits.
 
 ## 📦 Features
 
