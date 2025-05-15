@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Step Counter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>WalkTheTalk Steps</h1>
+    <p>Steps: <span id="steps">Loading...</span></p>
+
+    <button onclick="addSteps()">Add 100 Steps</button>
+    <button onclick="sendStep()">Send 1 Step</button>
+    <button onclick="authorize()">Authorize Google Fit</button>
+  </div>
+
+  <script>
+    async function fetchSteps() {
+        const res = await fetch('/api/get_steps');
+        const data = await res.json();
+        document.getElementById('steps').textContent = data.steps;
+    }
+
+    async function addSteps() {
+        await fetch('/api/add_steps', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({steps: 100})
+        });
+        fetchSteps();
+    }
+
+    async function sendStep() {
+        await fetch('/api/send_step', {method: 'POST'});
+        fetchSteps();
+    }
+
+    function authorize() {
+        window.location.href = '/authorize';
+    }
+
+    fetchSteps();
+  </script>
+</body>
+</html>
